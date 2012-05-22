@@ -1,1 +1,39 @@
-welcome
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>CSS Regions Browserscope test</title>
+</head>
+<body> 
+    
+    <h1>BrowserScope + CSS Regions</h1>
+    <p>This page automatically runs the CSS Regions tests on your browser then sends the results to browserscope.org</p>
+    <p>Feelin' used?</p>
+
+
+<script>
+    // To save data in Browserscope do something like the following.
+    // The syntax is 'test_key': 'value' where test_key is some unique
+    // identifier for a piece of data you want to store (no = or , allowed)
+    // and value is a numeric value from 0 through 1000000000000.
+    // Note: You can only send a maximum of 200 results in a beacon.
+    var _bTestResults = {}
+    
+     var el = document.body,
+         style
+
+     style = window.getComputedStyle(el, null)    
+     
+     _bTestResults["webkitFlowInto"] = (style['webkitFlowInto'] != undefined) ? 1 : 0
+     _bTestResults["webkitFlowFrom"] = (style['webkitFlowFrom'] != undefined) ? 1 : 0
+     
+    // Beacon the results to Browserscope.
+    !function(){
+    var testKey = 'agt1YS1wcm9maWxlcnINCxIEVGVzdBia9NEQDA';
+    var newScript = document.createElement('script'),
+        firstScript = document.getElementsByTagName('script')[0];
+    newScript.src = 'http://www.browserscope.org/user/beacon/' + testKey;
+    firstScript.parentNode.insertBefore(newScript, firstScript);
+    }();  
+</script>    
+</body>
+</html>
