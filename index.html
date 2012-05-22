@@ -22,7 +22,18 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 -->
 <!DOCTYPE html>
 <html>
-<head>
+<head> 
+    <style type="text/css">
+    
+    .results{
+        font-size:1.2em;
+        color: white; 
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+    
+    </style>
 	<meta charset="UTF-8" />
 	<title>CSS Regions Test Suite</title>
 	<script type="text/javascript" src="qunit/jquery-1.7.1.js"></script>
@@ -60,8 +71,6 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
                 firstScript = document.getElementsByTagName('script')[0];
             newScript.src = 'http://www.browserscope.org/user/beacon/' + testKey;
             firstScript.parentNode.insertBefore(newScript, firstScript);    
-            
-            console.warn("publishing", _bTestResults)
         }    
     }   
     
@@ -72,6 +81,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 </head>
 <body>
+    <a href="results.html" target="_blank" class="results">Browser test results</a>
 	<div id="qunit"></div>
 	<div id="qunit-fixture">test markup</div>
 </body>
