@@ -50,6 +50,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
      
     // Add option in Qunit to toggle publishing results to BrowserScope.org
     QUnit.config.urlConfig.push("publishresults")
+    QUnit.config.testTimeout = 3000
     
     // Build-up the test results beacon for BrowserScope.org
     QUnit.testDone = function(obj){   
